@@ -20,20 +20,12 @@ while True:
     if opcao == "1":
         print("\nDepósito\n")
         valor_depositado = float(input("Digite o valor que deseja depositar: "))
-        while valor_depositado:
-            if valor_depositado > 0:
-                saldo += valor_depositado
-                print("Deseja realizar outro depósito? y/n")
-                if input() == "n":
-                    break
-                elif input() == "y":
-                    print("Digite o valor que deseja depositar")
-                else:
-                    print("\nOpção inválida!\nRetornando para o menu...")
-                    break
-            else:
-                print("\nValor inválido, digite um valor positivo\nRetornando para o menu...")
-                break
+        if valor_depositado > 0:
+            saldo += valor_depositado
+            extrato += "Depósito: R${valor_depositado:.2f}\n"
+        else:
+            print("\nValor inválido, digite um valor positivo\nRetornando para o menu...")
+            break
 
     elif opcao == "2":
         print("Saque")
